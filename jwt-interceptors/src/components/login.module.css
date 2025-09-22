@@ -1,0 +1,16 @@
+.form_container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.form_container form label{
+    display: block;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.form_container form button{
+    display: block;
+    margin-top: 30px;
+}

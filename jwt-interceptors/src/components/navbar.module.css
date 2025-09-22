@@ -1,0 +1,17 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.navbar_container{
+    display: flex;
+    justify-items: center;
+    background-color: skyblue;
+    height: 50px;
+    min-height: 50px;
+}
+.navbar_container button {
+    padding: 15px 25px;
+    border:  none;
+    ;
+}
