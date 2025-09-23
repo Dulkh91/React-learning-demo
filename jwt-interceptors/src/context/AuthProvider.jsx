@@ -32,13 +32,26 @@ const AuthProvider = ({children}) => {
     const logout = ()=>{
         AuthService.logout()
         setUser(null)
-    }
+    };
+
+    const register = async (userData) => {
+        // console.log(userData);
+        const res = await AuthService.register(userData);
+        if (res) {
+            const currentUser = await AuthService.getCurrentUser();
+            setUser(currentUser);
+            console.log(userData.email);
+        }
+       
+        return res;
+    };
 
     const value = {
         user,
         login, 
         logout,
         isLoading,
+        register,
         isAuthenticated: AuthService.isAuthenticated()
     }
     return (<AuthContext.Provider value={value}>

@@ -25,7 +25,10 @@ const LoginPage = () => {
             <Input placeholder="Email" type="email" name="email"/>
             <label htmlFor="password">Password:</label>
             <Input placeholder="Password" type="password" name='password'/>
-            <Button variant='contained' type='submit'>Login</Button>
+            <div className={style.container_button}>
+                <Button variant='contained' type='submit'>Login</Button>
+                <Button variant='contained' onClick={()=>navigate("/create-user")}>Create User</Button>
+            </div>
         </form>
     </div> );
 }

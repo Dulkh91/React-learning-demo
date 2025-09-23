@@ -2,15 +2,17 @@ import { createBrowserRouter } from "react-router";
 import LoginPage from "../components/login";
 import Layout from "../layout/layout";
 import ProfilePage from "../components/profile";
+import CreateUser from "../components/createUser";
 
  const router = createBrowserRouter([
-        {path: '/login', 
+        {path: '/', 
         element:<Layout/>,
         children:[
             {
-            index: true,
+            path: 'login',
             element: <LoginPage/>
             },
+            {path: '/create-user', element: <CreateUser/>}
         ]
     },
     {

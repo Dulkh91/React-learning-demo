@@ -45,6 +45,21 @@ export const AuthService = {
       Cookies.remove('token')
   },
 
+  // Register function
+  register: async(userData)=>{
+    // console.log(userData);
+      try {
+          const res = await api.post('/users', userData)
+          // console.log(res.data);
+          // if(res.data.access_token){
+          //   Cookies.set('token', res.data.access_token, {expires: 7})
+          // }
+          
+          return res.data
+      } catch (error) {
+          throw error.data.response.data || error.message
+      }
+  },
   // Check if user is authenticated
   isAuthenticated: ()=>{
     return !!Cookies.get('token')
